@@ -1,0 +1,52 @@
+{
+  "name": "frontfutbol",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "lint": "run-s lint:*",
+    "dev": "vite",
+    "format": "prettier --write src/",
+    "lint:eslint": "eslint . --fix --cache",
+    "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/font": "5.9.55",
+    "axios": "^1.13.2",
+    "pinia": "^3.0.4",
+    "roboto-fontface": "*",
+    "sass": "^1.93.3",
+    "sweetalert2": "^11.26.3",
+    "tsparticles": "^3.9.1",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue3-particles": "^2.12.0",
+    "vue3-toastify": "^0.2.8",
+    "vuetify": "^3.7.3",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@prettier/plugin-oxc": "^0.0.4",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.37.0",
+    "eslint-plugin-oxlint": "~1.23.0",
+    "eslint-plugin-vue": "~10.5.0",
+    "globals": "^16.4.0",
+    "npm-run-all2": "^8.0.4",
+    "oxlint": "~1.23.0",
+    "prettier": "3.6.2",
+    "vite": "^7.1.11",
+    "vite-plugin-vue-devtools": "^8.0.3",
+    "vue-cli-plugin-vuetify": "~2.5.8"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "type": "module"
+}

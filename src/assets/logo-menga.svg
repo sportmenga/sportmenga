@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="1400" viewBox="0 0 1200 1400" fill="none">
+  <!-- transparent background (no rect) -->
+
+  <!-- FOOTBALL -->
+  <g id="ball" transform="translate(420,40) scale(1.0)">
+    <circle cx="180" cy="120" r="80" fill="#000"/>
+    <g transform="translate(0,0)" fill="#fff">
+      <path d="M180 44 L206 84 L175 102 L145 83 Z"/>
+      <path d="M180 44 L154 84 L185 102 L215 83 Z" opacity="0.98"/>
+    </g>
+    <!-- simplified pentagons/lines to resemble ball -->
+    <path d="M180 40 L210 62 L198 97 L162 97 L150 62 Z" fill="none" stroke="#fff" stroke-width="6"/>
+  </g>
+
+  <!-- TOP RIBBON -->
+  <g id="ribbon-top" transform="translate(80,160)">
+    <path d="M40 70 C220 10 980 10 1160 70 L1060 150 C900 90 300 90 140 150 Z"
+          fill="#E52525"/>
+    <!-- left black tail -->
+    <path d="M20 140 L120 200 L80 220 L0 170 Z" fill="#0d0d0d"/>
+    <!-- right black tail -->
+    <path d="M1160 140 L1060 200 L1100 220 L1200 170 Z" fill="#0d0d0d"/>
+    <!-- thin shadow triangle at ribbon folds -->
+    <path d="M120 110 L160 140 L120 160 Z" fill="#cfcfcf" opacity="0.5"/>
+    <path d="M1040 110 L1000 140 L1040 160 Z" fill="#cfcfcf" opacity="0.5"/>
+    <!-- TEXT CLUB -->
+    <text x="600" y="120" text-anchor="middle"
+          font-family="Montserrat, Arial, sans-serif" font-weight="800"
+          font-size="110" fill="#FFD24D" letter-spacing="4">
+      CLUB
+    </text>
+  </g>
+
+  <!-- SHIELD -->
+  <g id="shield" transform="translate(260,300)">
+    <!-- outer red border -->
+    <path d="M360 0 L480 36 L540 120 L520 380 C500 560 210 760 120 560 L100 380 L80 120 Z"
+          fill="#E52525"/>
+    <!-- inner white shield -->
+    <path d="M340 24 L460 52 L512 130 L496 360 C480 520 240 700 140 520 L120 360 L104 130 Z"
+          fill="#ffffff"/>
+    <!-- purple vertical stripes -->
+    <g transform="translate(160,90)">
+      <rect x="32" y="0" width="52" height="390" fill="#5A2EA8"/>
+      <rect x="110" y="0" width="52" height="390" fill="#5A2EA8"/>
+      <rect x="188" y="0" width="52" height="390" fill="#5A2EA8"/>
+      <!-- right thin purple accent -->
+      <path d="M270 0 L312 0 L312 360 L270 360 Z" fill="#5A2EA8" opacity="0.9"/>
+    </g>
+
+    <!-- three red stars -->
+    <g transform="translate(200,210) scale(1.0)">
+      <polygon points="40,0 50,28 80,30 56,48 64,78 40,60 16,78 24,48 0,30 30,28"
+               fill="#E52525" transform="translate(-40,120)"/>
+      <polygon points="40,0 50,28 80,30 56,48 64,78 40,60 16,78 24,48 0,30 30,28"
+               fill="#E52525" transform="translate(10,40) scale(0.95)"/>
+      <polygon points="40,0 50,28 80,30 56,48 64,78 40,60 16,78 24,48 0,30 30,28"
+               fill="#E52525" transform="translate(100,10) scale(0.95)"/>
+    </g>
+  </g>
+
+  <!-- BOTTOM RIBBON -->
+  <g id="ribbon-bottom" transform="translate(80,920)">
+    <path d="M40 70 C220 110 980 110 1160 70 L1060 -10 C900 50 300 50 140 -10 Z"
+          fill="#E52525"/>
+    <!-- tails -->
+    <path d="M20 -10 L120 -70 L80 -90 L0 -40 Z" fill="#0d0d0d"/>
+    <path d="M1160 -10 L1060 -70 L1100 -90 L1200 -40 Z" fill="#0d0d0d"/>
+    <!-- small fold shadows -->
+    <path d="M120 20 L160 -10 L120 -30 Z" fill="#cfcfcf" opacity="0.5"/>
+    <path d="M1040 20 L1000 -10 L1040 -30 Z" fill="#cfcfcf" opacity="0.5"/>
+    <!-- text MENGA SPORT -->
+    <text x="600" y="80" text-anchor="middle"
+          font-family="Montserrat, Arial, sans-serif" font-weight="800"
+          font-size="72" fill="#FFD24D" letter-spacing="2">
+      MENGA SPORT
+    </text>
+  </g>
+
+  <!-- Optional small white outline removal / ensure transparency preserved -->
+  <!-- no background rect included on purpose so file is transparent -->
+
+</svg>
