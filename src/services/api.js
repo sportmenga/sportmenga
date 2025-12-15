@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = 'httpss://futboleveback-production.up.railway.app/api'
+const API_BASE_URL = 'https://futboleveback-production.up.railway.app/api'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
