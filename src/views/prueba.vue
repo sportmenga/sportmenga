@@ -273,7 +273,7 @@ const cargarJugadoresPorCategoria = async (categoria) => {
   try {
     cargando.value = true
     const response = await axios.get(
-      `http://localhost:3000/api/players/category/${encodeURIComponent(categoria)}`,
+      `https://futboleveback-production.up.railway.app/api/players/category/${encodeURIComponent(categoria)}`,
     )
     jugadores.value = response.data
     console.log(`Jugadores de ${categoria}:`, jugadores.value)

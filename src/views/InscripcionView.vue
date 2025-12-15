@@ -315,12 +315,16 @@ const enviarFormulario = async () => {
     console.log('📤 Enviando datos al backend:', payload)
 
     // Hacer la petición POST al backend
-    const response = await axios.post('http://localhost:3000/api/players', payload, {
-      headers: {
-        'Content-Type': 'application/json',
+    const response = await axios.post(
+      'https://futboleveback-production.up.railway.app/api/players',
+      payload,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        timeout: 10000,
       },
-      timeout: 10000,
-    })
+    )
 
     toast.success('✅ Formulario enviado correctamente al servidor')
     console.log('📩 Respuesta del servidor:', response.data)
