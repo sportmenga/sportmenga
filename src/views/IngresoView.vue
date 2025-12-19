@@ -73,6 +73,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import LogoImg from '@/assets/logo.svg'
 import { toast } from '@/main'
+import { userService } from '@/services/api'
 
 const email = ref('')
 const password = ref('')
@@ -89,34 +90,40 @@ async function login() {
   loading.value = true
 
   try {
-    const response = await fetch('http://localhost:3000/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: email.value,
-        password: password.value,
-      }),
+    // Usar el servicio centralizado en lugar de fetch directo
+    const response = await userService.loginUser({
+      email: email.value,
+      password: password.value,
     })
 
-    const data = await response.json()
-
-    if (!response.ok) {
-      throw new Error(data.message || 'Error en el login')
-    }
+    const data = response.data
 
     // Guardar el token en localStorage
-    localStorage.setItem('authToken', data.token)
-    localStorage.setItem('userData', JSON.stringify(data.user))
+    if (data.token) {
+      localStorage.setItem('authToken', data.token)
+    }
+    if (data.user) {
+      localStorage.setItem('userData', JSON.stringify(data.user))
+    }
 
-    toast.success(`¡Bienvenido ${data.user.username || data.user.email}!`)
+    toast.success(`¡Bienvenido ${data.user?.username || data.user?.email || email.value}!`)
 
     // Redirigir al dashboard o página principal
-    router.push('/dashboard')
+    router.push('/administracion')
   } catch (error) {
     console.error('Error en login:', error)
-    toast.error(error.message || 'Error al iniciar sesión')
+
+    // Manejar errores del servidor
+    if (error.response) {
+      const status = error.response.status
+      const data = error.response.data
+      const mensajeError = data?.message || data?.error || `Error ${status}: No se pudo iniciar sesión`
+      toast.error(mensajeError)
+    } else if (error.request) {
+      toast.error('No se pudo conectar con el servidor. Verifica tu conexión a internet')
+    } else {
+      toast.error(error.message || 'Error al iniciar sesión')
+    }
   } finally {
     loading.value = false
   }

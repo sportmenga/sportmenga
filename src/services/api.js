@@ -7,6 +7,7 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 180000, // 3 minutos para peticiones que pueden tardar más
 })
 
 // Interceptor para manejar errores globalmente
@@ -127,10 +128,17 @@ export const teacherMaterialService = {
   },
 }
 
-// Servicio para usuarios (autenticación)
+// Servicio para usuarios (autenticación y gestión)
 export const userService = {
+  // Autenticación
   registerUser: (data) => api.post('/register', data),
   loginUser: (data) => api.post('/login', data),
+
+  // Gestión de usuarios
+  getAllUsers: (filters = {}) => api.get('/users', { params: filters }),
+  //getUser: (id) => api.get(`/users/${id}`),
+  //updateUser: (id, data) => api.put(`/users/${id}`, data),
+  //deleteUser: (id) => api.delete(`/users/${id}`),
 }
 
 export default api
